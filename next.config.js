@@ -49,3 +49,5 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+//* Supabase password: 2CSfS@Qt!4#_!#6
