@@ -8,7 +8,11 @@ import './globals.css';
 //* This layout enables you to modify the initial HTML returned from the server.
 //* <head /> will contain the components returned by the nearest parent
 //* head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}): ReactNode {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head />

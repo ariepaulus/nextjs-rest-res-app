@@ -1,6 +1,6 @@
-import { Fragment } from 'react';
+import { Fragment, ReactNode } from 'react';
 
-export default function Head() {
+export default function Head(): ReactNode {
   return (
     <Fragment>
       <title>OpenTable - Reserve</title>

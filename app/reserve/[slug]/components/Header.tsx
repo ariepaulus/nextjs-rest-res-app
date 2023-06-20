@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import { ReactNode } from 'react';
 
-export default function Header() {
+export default function Header(): ReactNode {
   return (
     <div>
       <h3 className="font-bold">You are almost done!</h3>

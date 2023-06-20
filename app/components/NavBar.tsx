@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import { ReactNode } from 'react';
 
-export default function NavBar() {
+export default function NavBar(): ReactNode {
   return (
     <nav className="bg-white p-2 flex justify-between">
       <Link href="/" className="font-bold text-gray-700 text-2xl">

@@ -1,4 +1,6 @@
-export default function Reviews() {
+import { ReactNode } from 'react';
+
+export default function Reviews(): ReactNode {
   return (
     <div>
       <h1 className="text-black font-bold text-3xl mt-10 mb-7 borber-b pb-5">

@@ -1,5 +1,8 @@
 'use client';
-export default function ReservationCard() {
+
+import { ReactNode } from 'react';
+
+export default function ReservationCard(): ReactNode {
   return (
     <div className="w-[27%] relative text-re">
       <div className="fixed w-[15%] bg-white rounded p-3 shadow">

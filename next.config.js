@@ -1,4 +1,4 @@
-//** @type {import('next').NextConfig}
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     appDir: true,
@@ -11,30 +11,66 @@ const nextConfig = {
     // limit of 50 domains values
     domains: [],
     // path prefix for Image Optimization API, useful with `loader`
-    path: '/_next/image',
+    //   path: '/_next/image',
     // loader can be 'default', 'imgix', 'cloudinary', 'akamai', or 'custom'
-    loader: 'default',
+    //   loader: 'default',
     // file with `export default function loader({src, width, quality})`
-    loaderFile: '',
+    //   loaderFile: '',
     // disable static imports for image files
     disableStaticImages: false,
     // minimumCacheTTL is in seconds, must be integer 0 or more
     minimumCacheTTL: 60,
     // ordered list of acceptable optimized image formats (mime types)
-    formats: ['image/webp'],
+    //   formats: ['image/webp'],
     // enable dangerous use of SVG images
     dangerouslyAllowSVG: false,
     // set the Content-Security-Policy header
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    //   contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     // sets the Content-Disposition header (inline or attachment)
-    contentDispositionType: 'inline',
+    // contentDispositionType: 'inline',
     // limit of 50 objects
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'resizer.otstatic.com',
         port: '',
-        pathname: '/v2/photos/xlarge/**',
+        pathname: '/v2/photos/xlarge/1/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'resizer.otstatic.com',
+        port: '',
+        pathname: '/v2/photos/xlarge/2/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'resizer.otstatic.com',
+        port: '',
+        pathname: '/v2/photos/xlarge/3/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'resizer.otstatic.com',
+        port: '',
+        pathname: '/v2/photos/wide-huge/1/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'resizer.otstatic.com',
+        port: '',
+        pathname: '/v2/photos/wide-huge/2/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'resizer.otstatic.com',
+        port: '',
+        pathname: '/v2/photos/wide-huge/3/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'resizer.otstatic.com',
+        port: '',
+        pathname: '/v2/photos/wide-huge/4/**',
       },
       {
         protocol: 'https',
@@ -49,5 +85,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-
-//* Supabase password: 2CSfS@Qt!4#_!#6

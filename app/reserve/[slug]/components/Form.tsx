@@ -1,4 +1,6 @@
-export default function Form() {
+import { ReactNode } from 'react';
+
+export default function Form(): ReactNode {
   return (
     <div className="mt-10 flex flex-wrap justify-between w-[660px]">
       <input

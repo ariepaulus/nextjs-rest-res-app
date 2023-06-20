@@ -1,18 +1,57 @@
+//! This is a server component: instead of http-requests, there will be sql-requests
 //* Pages in the app directory in Next.js are Server Components by default; in terms of performance, it is probably the best component that can be used; advantages: dependencies can stay on the server; better performance; access to the backend
 //* Server-side rendering: the client (browser) does not receive an empty html-file, but an html-file for each particular page, containing all the components, different html-elements, and different classes, already loaded on the server, that it needs; the server sends it off the the client which does not need to parse it, but can go ahead and render it.
 //* A general rule: a server component can render a client component, but a client component cannot render a server component.
 //* Only exception to the rule: if a client component is rendering a server component that is passed in to the client as a 'children prop'
 //* `app/page.tsx` is the UI for the `/` URL
 //* http://localhost:3000 / https://opentable.ca - homepage.html
+import { ReactNode } from 'react';
 import Header from './components/Header';
 import RestaurantCard from './components/RestaurantCard';
+import { Cuisine, Location, PRICE, PrismaClient } from '@prisma/client';
 
-export default function Home() {
+export interface RestaurantCardType {
+  id: number;
+  name: string;
+  slug: string;
+  main_image: string;
+  cuisine: Cuisine;
+  location: Location;
+  price: PRICE;
+}
+
+const prisma = new PrismaClient();
+
+const fetchRestaurants = async (): Promise<RestaurantCardType[]> => {
+  const restaurants = await prisma.restaurant.findMany({
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      main_image: true,
+      cuisine: true,
+      location: true,
+      price: true,
+    },
+  });
+
+  return restaurants;
+};
+
+export default async function Home(): Promise<ReactNode> {
+  const restaurants = await fetchRestaurants();
+
+  //! Data is fetched in the backend - see terminal
+  // console.log({ restaurants });
+
   return (
     <main>
       <Header />
-      <div className="py-3 px-36 mt-10 flex flex-wrap"></div>
-      <RestaurantCard />
+      <div className="py-3 px-36 mt-10 flex flex-wrap">
+        {restaurants.map(restaurant => (
+          <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+        ))}
+      </div>
     </main>
   );
 }
