@@ -1,8 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
-
-export default function ReservationCard(): ReactNode {
+export default function ReservationCard(): JSX.Element {
   return (
     <div className="w-[27%] relative text-re">
       <div className="fixed w-[15%] bg-white rounded p-3 shadow">
@@ -49,3 +47,5 @@ export default function ReservationCard(): ReactNode {
     </div>
   );
 }
+
+type ReservationCard = ReturnType<typeof ReservationCard>;

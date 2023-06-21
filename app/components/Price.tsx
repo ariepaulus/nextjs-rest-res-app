@@ -28,3 +28,5 @@ export default function Price({ price }: { price: PRICE }): JSX.Element {
 
   return <p className="flex mr-3">{renderPrice()}</p>;
 }
+
+type Price = ReturnType<typeof Price>;

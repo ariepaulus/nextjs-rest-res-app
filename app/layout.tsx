@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import NavBar from './components/NavBar';
 import './globals.css';
 //* The root layout is a Server Component by default and cannot be set to a Client Component
@@ -11,8 +10,8 @@ import './globals.css';
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode;
-}): ReactNode {
+  children: never;
+}): JSX.Element {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head />
@@ -27,3 +26,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+type RootLayout = ReturnType<typeof RootLayout>;

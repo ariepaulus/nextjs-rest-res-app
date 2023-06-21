@@ -5,19 +5,19 @@
 //* Only exception to the rule: if a client component is rendering a server component that is passed in to the client as a 'children prop'
 //* `app/page.tsx` is the UI for the `/` URL
 //* http://localhost:3000 / https://opentable.ca - homepage.html
-import { ReactNode } from 'react';
 import Header from './components/Header';
 import RestaurantCard from './components/RestaurantCard';
-import { Cuisine, Location, PRICE, PrismaClient } from '@prisma/client';
+import { Cuisine, Location, PRICE, PrismaClient, Review } from '@prisma/client';
 
 export interface RestaurantCardType {
   id: number;
   name: string;
-  slug: string;
   main_image: string;
   cuisine: Cuisine;
   location: Location;
   price: PRICE;
+  slug: string;
+  reviews: Review[];
 }
 
 const prisma = new PrismaClient();
@@ -27,18 +27,19 @@ const fetchRestaurants = async (): Promise<RestaurantCardType[]> => {
     select: {
       id: true,
       name: true,
-      slug: true,
       main_image: true,
       cuisine: true,
       location: true,
       price: true,
+      slug: true,
+      reviews: true,
     },
   });
 
   return restaurants;
 };
 
-export default async function Home(): Promise<ReactNode> {
+export default async function Home(): Promise<JSX.Element> {
   const restaurants = await fetchRestaurants();
 
   //! Data is fetched in the backend - see terminal
@@ -47,7 +48,7 @@ export default async function Home(): Promise<ReactNode> {
   return (
     <main>
       <Header />
-      <div className="py-3 px-36 mt-10 flex flex-wrap">
+      <div className="py-3 px-36 mt-10 flex flex-wrap justify-center">
         {restaurants.map(restaurant => (
           <RestaurantCard key={restaurant.id} restaurant={restaurant} />
         ))}
@@ -55,6 +56,8 @@ export default async function Home(): Promise<ReactNode> {
     </main>
   );
 }
+
+type Home = ReturnType<typeof Home>;
 
 //* A summary of when to use a server component and when to use a client component:
 //? Fetching data: server component

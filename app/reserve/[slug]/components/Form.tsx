@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+'use client';
 
-export default function Form(): ReactNode {
+export default function Form(): JSX.Element {
   return (
     <div className="mt-10 flex flex-wrap justify-between w-[660px]">
       <input
@@ -44,3 +44,5 @@ export default function Form(): ReactNode {
     </div>
   );
 }
+
+type Form = ReturnType<typeof Form>;

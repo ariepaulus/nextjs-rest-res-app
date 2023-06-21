@@ -1,15 +1,49 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 //* Pages in Next.js are Server Components by default
 //* http://localhost:3000/search / https://opentable.ca/search - searchPage.html
-import { PrismaClient } from '@prisma/client';
-import { Fragment, ReactNode } from 'react';
+import { Cuisine, PRICE, PrismaClient, Location } from '@prisma/client';
+import { Fragment } from 'react';
 import Header from './components/Header';
 import RestaurantCard from './components/RestaurantCard';
 import SearchSideBar from './components/SearchSideBar';
 
 const prisma = new PrismaClient();
 
+interface SearchParams {
+  city?: string;
+  cuisine?: string;
+  price?: PRICE;
+}
+
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const fetchRestaurantsByCity = (city: string | undefined) => {
+const fetchRestaurantsByCity = (searchParams: SearchParams) => {
+  const where: any = {};
+
+  if (searchParams.city) {
+    const location = {
+      name: {
+        equals: searchParams.city.toLowerCase(),
+      },
+    };
+    where.location = location;
+  }
+  if (searchParams.cuisine) {
+    const cuisine = {
+      name: {
+        equals: searchParams.cuisine.toLowerCase(),
+      },
+    };
+    where.cuisine = cuisine;
+  }
+  if (searchParams.price) {
+    const price = {
+      equals: searchParams.price,
+    };
+    where.price = price;
+  }
+
   const select = {
     id: true,
     name: true,
@@ -18,38 +52,31 @@ const fetchRestaurantsByCity = (city: string | undefined) => {
     cuisine: true,
     location: true,
     slug: true,
+    reviews: true,
   };
 
-  if (!city) return prisma.restaurant.findMany({ select });
-
   return prisma.restaurant.findMany({
-    where: {
-      location: {
-        name: {
-          equals: city.toLowerCase(),
-        },
-      },
-    },
+    where,
     select,
   });
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const fetchLocations = async () => {
+type fetchRestaurantsByCity = ReturnType<typeof fetchRestaurantsByCity>;
+
+const fetchLocations = async (): Promise<Location[]> => {
   return prisma.location.findMany();
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const fetchCuisines = async () => {
+const fetchCuisines = async (): Promise<Cuisine[]> => {
   return prisma.cuisine.findMany();
 };
 
 export default async function Search({
   searchParams,
 }: {
-  searchParams: { city: string };
-}): Promise<ReactNode> {
-  const restaurants = await fetchRestaurantsByCity(searchParams.city);
+  searchParams: { city?: string; cuisine?: string; price?: PRICE };
+}): Promise<JSX.Element> {
+  const restaurants = await fetchRestaurantsByCity(searchParams);
   const location = await fetchLocations();
   const cuisine = await fetchCuisines();
 
@@ -60,11 +87,7 @@ export default async function Search({
         <SearchSideBar
           locations={location}
           cuisines={cuisine}
-          searchParams={{
-            city: undefined,
-            cuisine: undefined,
-            price: undefined,
-          }}
+          searchParams={searchParams}
         />
         <div className="w-5/6">
           {restaurants.length ? (
@@ -81,3 +104,5 @@ export default async function Search({
     </Fragment>
   );
 }
+
+type Search = ReturnType<typeof Search>;

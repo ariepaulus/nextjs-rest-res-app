@@ -8,7 +8,7 @@ export default function RestaurantLayout({
 }: {
   children: ReactNode;
   params: { slug: string };
-}): ReactNode {
+}): JSX.Element {
   return (
     <main>
       <Header name={params.slug} />
@@ -18,3 +18,5 @@ export default function RestaurantLayout({
     </main>
   );
 }
+
+type RestaurantLayout = ReturnType<typeof RestaurantLayout>;

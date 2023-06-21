@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
+
 import { RestaurantCardType } from '../page';
 import Price from './Price';
+import Stars from './Stars';
 
 interface Props {
   restaurant: RestaurantCardType;
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export default function RestaurantCard({ restaurant }: Props) {
+export default function RestaurantCard({ restaurant }: Props): JSX.Element {
   return (
     <div className="w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer">
       <Link href={`/restaurant/${restaurant.slug}`}>
@@ -25,8 +26,11 @@ export default function RestaurantCard({ restaurant }: Props) {
             {restaurant.name}
           </h3>
           <div className="flex items-start">
-            <div className="text-black flex mb-2">*****</div>
-            <p className="text-black ml-2">77 reviews</p>
+            <Stars reviews={restaurant.reviews} />
+            <p className="text-black ml-2">
+              {restaurant.reviews?.length} review
+              {restaurant.reviews?.length === 1 ? '' : 's'}
+            </p>
           </div>
           <div className="flex text-reg capitalize">
             <p className="text-black mr-3 ">{restaurant.cuisine.name}</p>
@@ -41,3 +45,5 @@ export default function RestaurantCard({ restaurant }: Props) {
     </div>
   );
 }
+
+type RestaurantCard = ReturnType<typeof RestaurantCard>;

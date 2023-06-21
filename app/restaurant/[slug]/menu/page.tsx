@@ -2,7 +2,6 @@
 //* http://localhost:3000/restaurant/[slug]/menu / https://opentable.co.za/restaurant/[slug]/menu - restaurantMenuPage.html
 import { Item, PrismaClient } from '@prisma/client';
 import { notFound } from 'next/navigation';
-import { ReactNode } from 'react';
 
 import Menu from '../components/Menu';
 import RestaurantNavBar from '../components/RestaurantNavBar';
@@ -26,11 +25,13 @@ const fetchRestaurantMenu = async (slug: string): Promise<Item[]> => {
   return restaurant.items;
 };
 
+type fetchRestaurantMenu = ReturnType<typeof fetchRestaurantMenu>;
+
 export default async function RestaurantMenu({
   params,
 }: {
   params: { slug: string };
-}): Promise<ReactNode> {
+}): Promise<JSX.Element> {
   const menu = await fetchRestaurantMenu(params.slug);
 
   return (
@@ -40,3 +41,5 @@ export default async function RestaurantMenu({
     </div>
   );
 }
+
+type RestaurantMenu = ReturnType<typeof RestaurantMenu>;

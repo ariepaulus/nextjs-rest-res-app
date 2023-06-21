@@ -4,17 +4,10 @@
 //* Ultimate goal: is to use the smallest number of client components as possible.
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export default function SearchBar() {
+export default function SearchBar(): JSX.Element {
   const [location, setLocation] = useState('');
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const search = searchParams.get('search');
-  //* URL -> `/?search=toronto`
-  //* `search` -> 'toronto'
 
   return (
     <div className="text-left py-3 m-auto flex justify-center">
@@ -40,3 +33,5 @@ export default function SearchBar() {
     </div>
   );
 }
+
+type SearchBar = ReturnType<typeof SearchBar>;

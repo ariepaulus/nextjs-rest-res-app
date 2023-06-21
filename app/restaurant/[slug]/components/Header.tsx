@@ -1,6 +1,4 @@
-import { ReactNode } from 'react';
-
-export default function Header({ name }: { name: string }): ReactNode {
+export default function Header({ name }: { name: string }): JSX.Element {
   const renderTitle = (): string => {
     const nameArray = name.split('-');
     nameArray[nameArray.length - 1] = `(${nameArray[nameArray.length - 1]})`;
@@ -16,3 +14,5 @@ export default function Header({ name }: { name: string }): ReactNode {
     </div>
   );
 }
+
+type Header = ReturnType<typeof Header>;

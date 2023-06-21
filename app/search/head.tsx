@@ -1,6 +1,6 @@
-import { Fragment, ReactNode } from 'react';
+import { Fragment } from 'react';
 
-export default function Head(): ReactNode {
+export default function Head(): JSX.Element {
   return (
     <Fragment>
       <title>OpenTable - Search</title>
@@ -10,3 +10,5 @@ export default function Head(): ReactNode {
     </Fragment>
   );
 }
+
+type Head = ReturnType<typeof Head>;

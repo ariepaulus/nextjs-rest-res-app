@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import { ReactNode } from 'react';
 
-export default function Images({ images }: { images: string[] }): ReactNode {
+export default function Images({ images }: { images: string[] }): JSX.Element {
   return (
     <div>
       <h1 className="font-bold text-black text-3xl mt-10 mb-7 border-b pb-5">
@@ -23,3 +22,5 @@ export default function Images({ images }: { images: string[] }): ReactNode {
     </div>
   );
 }
+
+type Images = ReturnType<typeof Images>;

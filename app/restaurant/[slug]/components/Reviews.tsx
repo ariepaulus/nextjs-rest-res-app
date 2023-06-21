@@ -1,35 +1,31 @@
-import { ReactNode } from 'react';
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { Review } from '@prisma/client';
+import ReviewCard from './ReviewCard';
 
-export default function Reviews(): ReactNode {
+export default function Reviews({
+  reviews,
+}: {
+  reviews: Review[];
+}): JSX.Element {
   return (
     <div>
       <h1 className="text-black font-bold text-3xl mt-10 mb-7 borber-b pb-5">
-        What 100 people are saying
+        {reviews.length > 0 && (
+          <p>
+            What {reviews.length}{' '}
+            {reviews.length === 1 ? 'person is ' : 'people are '}
+            saying!
+          </p>
+        )}
       </h1>
       <div>
-        <div className="border-b pb-7 mb-7">
-          <div className="flex">
-            <div className="w-1/6 flex flex-col items-center">
-              <div className="rounded-full bg-blue-400 w-16 h-16 flex items-center justify-center">
-                <h2 className="text-white text-2xl">MJ</h2>
-              </div>
-              <p className="text-black text-center mt-2">Michael Jordan</p>
-            </div>
-            <div className="ml-10 w-5/6">
-              <div className="flex items-center">
-                <div className="text-black flex mr-5">*****</div>
-              </div>
-              <div className="mt-5">
-                <p className="text-black text-lg font-light">
-                  Laurie was on top of everything! Slow night due to the snow
-                  storm so it worked in our favor to have more one on one with
-                  the staff. Delicious and well worth the money.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {reviews.map(review => (
+          <ReviewCard review={review} key={review.id} />
+        ))}
       </div>
     </div>
   );
 }
+
+type Reviews = ReturnType<typeof Reviews>;

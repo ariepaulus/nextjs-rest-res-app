@@ -1,7 +1,8 @@
-import Link from 'next/link';
-import { ReactNode } from 'react';
+'use client';
 
-export default function NavBar(): ReactNode {
+import Link from 'next/link';
+
+export default function NavBar(): JSX.Element {
   return (
     <nav className="bg-white p-2 flex justify-between">
       <Link href="/" className="font-bold text-gray-700 text-2xl">
@@ -20,3 +21,5 @@ export default function NavBar(): ReactNode {
     </nav>
   );
 }
+
+type NavBar = ReturnType<typeof NavBar>;

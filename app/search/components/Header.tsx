@@ -7,3 +7,5 @@ export default function Header(): JSX.Element {
     </div>
   );
 }
+
+type Header = ReturnType<typeof Header>;

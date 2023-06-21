@@ -1,7 +1,6 @@
 import { Item } from '@prisma/client';
-import { ReactNode } from 'react';
 
-export default function MenuCard({ item }: { item: Item }): ReactNode {
+export default function MenuCard({ item }: { item: Item }): JSX.Element {
   return (
     <div className=" border rounded p-3 w-[49%] mb-3">
       <h3 className="font-bold text-lg text-black">{item.name}</h3>
@@ -10,3 +9,5 @@ export default function MenuCard({ item }: { item: Item }): ReactNode {
     </div>
   );
 }
+
+type MenuCard = ReturnType<typeof MenuCard>;
