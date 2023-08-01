@@ -6,7 +6,7 @@ type Data = {
 };
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+export default function handler(_req: NextApiRequest, res: NextApiResponse<Data>) {
   res.status(200).json({ name: 'John Doe' });
 }
 

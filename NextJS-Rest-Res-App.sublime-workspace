@@ -1,0 +1,440 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/globals.css",
+			"settings":
+			{
+				"buffer_size": 2266,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/PackageDev/Package/Convert to ....sublime-build",
+					""
+				],
+				[
+					"Packages/PackageDev/Package/Convert to ....sublime-build",
+					"JSON"
+				],
+				[
+					"Packages/PackageDev/Package/Convert to ....sublime-build",
+					"Property List"
+				],
+				[
+					"Packages/PackageDev/Package/Convert to ....sublime-build",
+					"YAML (Block Style)"
+				],
+				[
+					"Packages/PackageDev/Package/Convert to ....sublime-build",
+					"YAML (Default Style)"
+				],
+				[
+					"Packages/User/gulp.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/gulp.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"bookma",
+				"Bookmarks: Toggle"
+			],
+			[
+				"goto",
+				"Emmet: Go to Previous Edit Point"
+			],
+			[
+				"file ren",
+				"File: Rename"
+			],
+			[
+				"key",
+				"Preferences: Terminus Key Bindings"
+			],
+			[
+				"preferences",
+				"Preferences: Settings"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"snippet",
+				"Snippet: html"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Bookmarks: Clear All"
+			],
+			[
+				"color",
+				"Colored Comments: Settings"
+			],
+			[
+				"PackageDev",
+				"PackageDev: Edit Current Color Scheme"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				":Package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Package Control",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: PackageDev",
+				"Package Control: Discover Packages"
+			],
+			[
+				"dic",
+				"Dictionaries: Set Language"
+			],
+			[
+				"ui:s",
+				"UI: Select Theme"
+			],
+			[
+				"theme",
+				"UI: Customize Theme"
+			],
+			[
+				"ui",
+				"UI: Select Color Scheme"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"colored comments",
+				"Colored Comments: Settings"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 194.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ariepaulus/Projects/Udemy-NextJS13-Complete-Bootcamp/NextJS-Rest-Res-App",
+		"/home/ariepaulus/Projects/Udemy-NextJS13-Complete-Bootcamp/NextJS-Rest-Res-App/app",
+		"/home/ariepaulus/Projects/Udemy-NextJS13-Complete-Bootcamp/NextJS-Rest-Res-App/pages"
+	],
+	"file_history":
+	[
+		"/home/ariepaulus/Projects/Udemy-Sublime-Text-Course/SublimeTextCourse/src/Todo.md",
+		"/home/ariepaulus/Projects/Udemy-Sublime-Text-Course/SublimeTextCourse/styles.css",
+		"/home/ariepaulus/Projects/Udemy-Sublime-Text-Course/SublimeTextCourse/all.js",
+		"/home/ariepaulus/.config/sublime-text/Packages/User/gulp.sublime-build",
+		"/home/ariepaulus/Projects/TypeScript-V4-Freeman/types-4/tsconfig.json",
+		"/home/ariepaulus/.config/sublime-text/Packages/JavaScript/JavaScript.sublime-syntax",
+		"/home/ariepaulus/Projects/TypeScript-V4-Freeman/types-3/src/index.ts",
+		"/home/ariepaulus/Projects/TypeScript-V4-Freeman/types-3/.eslintrc.js",
+		"/home/ariepaulus/Projects/Udemy-Complete-Node-Bootcamp/master/node_modules/axobject-query/lib/etc/objects/DetailsRole.js",
+		"/home/ariepaulus/Projects/TypeScript-V4-Freeman/types-3/dist/index.js"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 159.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/globals.css",
+					"selected": true,
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2266,
+						"regions":
+						{
+							"better_bookmarks":
+							{
+								"flags": 144,
+								"icon": "Packages/Theme - Default/common/bookmark.png",
+								"regions":
+								[
+								],
+								"scope": "string"
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": "/-:",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "LSP-css"
+								},
+								{
+									"characters": "\"'` .([!/:",
+									"registration_id": "3e67776d-f7e0-4606-a869-3c153f5cf75f",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "LSP-tailwindcss"
+								}
+							],
+							"lsp_active": true,
+							"lsp_hover_provider_count": 2,
+							"lsp_uri": "file:///home/ariepaulus/Projects/Udemy-NextJS13-Complete-Bootcamp/NextJS-Rest-Res-App/app/globals.css",
+							"show_definitions": false,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 168.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 37.0
+	},
+	"input":
+	{
+		"height": 61.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 190.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 190.0
+	},
+	"pinned_build_system": "",
+	"project": "NextJS-Rest-Res-App.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"wron",
+				"styles.wrong"
+			],
+			[
+				"",
+				"Udemy-Complete-Node-Bootcamp/master/node_modules/axobject-query/lib/etc/objects/DetailsRole.js"
+			],
+			[
+				"index.ts",
+				"TypeScript-V4-Freeman/types-3/src/index.ts"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 328.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 536.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 257.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,5 +1,7 @@
 import NavBar from './components/NavBar';
+import AuthContext from './context/authContext';
 import './globals.css';
+import 'react-datepicker/dist/react-datepicker.css';
 //* The root layout is a Server Component by default and cannot be set to a Client Component
 //* A layout is a UI that is shared between multiple pages.
 //* On navigation, layouts preserve state, remain interactive, and do not re-render.
@@ -17,10 +19,12 @@ export default function RootLayout({
       <head />
       <body>
         <main className="bg-gray-100 min-h-screen w-screen">
-          <main className="max-w-screen-2xl m-auto bg-white">
-            <NavBar />
-            {children}
-          </main>
+          <AuthContext>
+            <main className="max-w-screen-2xl m-auto bg-white">
+              <NavBar />
+              {children}
+            </main>
+          </AuthContext>
         </main>
       </body>
     </html>
